@@ -1,8 +1,8 @@
-package training.metofficeweather;
+package training.metofficeweather.forecast;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DV {
+public class Rep {
     @SerializedName(value="F")
     private String feelsLike;
     @SerializedName(value="G")

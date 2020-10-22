@@ -1,11 +1,10 @@
 package training.metofficeweather;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.FileReader;
 import java.io.IOException;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.stream.JsonReader;
+import training.metofficeweather.sitelist.Location;
+import training.metofficeweather.sitelist.Locations;
+import training.metofficeweather.sitelist.Root;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -16,7 +15,7 @@ public class Main {
     public static void main(String args[]) throws IOException {
         Client client = ClientBuilder.newClient();
         String json = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist?key=aa34d441-b333-4a68-abd8-4904d5971cfb")
-        String json1 = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/14?res=3hourly&key=aa34d441-b333-4a68-abd8-4904d5971cfb")
+       // String json1 = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/14?res=3hourly&key=aa34d441-b333-4a68-abd8-4904d5971cfb")
                 .request(MediaType.TEXT_PLAIN)
                 .get(String.class);
 //        Gson gson = new Gson();
@@ -37,11 +36,12 @@ public class Main {
         System.out.println("Elevation: " + locationsLocations[0].getElevation());
         System.out.println("ID: " + locationsLocations[0].getId());
 
-        Gson gson1 =new Gson();
+      //  Gson gson1 =new Gson();
 
-        Root DV = gson1.fromJson(json1, Root.class);
+       // Root DV = gson1.fromJson(json1, Root.class);
 
 
 
     }
 }	
+Set up a dictionary with the location ID and location name
