@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+
+    <!--@thymesVar id="weatherInfo" type="training.metofficeweather.web.WeatherInfo"-->
+
+    <head>
+        <title>Weather Information</title>
+    </head>
+    <body>
+        <div layout:fragment="content" class="container body-content">
+            <h2>Weather Information</h2>
+            <div>
+                <p>You entered location id <span th:text="${weatherInfo.locationId}"></span></p>
+                <p> <span th:text="${weatherInfo.forecastData}"></span></p>
+                <p> <span th:text="${weatherInfo.tempFeelsLike}"></span></p>
+                <p> <span th:text="${weatherInfo.weatherType}"></span></p>
+            </div>
+        </div>
+    </body>
+</html>
